@@ -4,27 +4,31 @@
 }
 
 .full-hru {
-	position: absolute;
+	position: absolute;
+	height: 100vh;
 	z-index: 1;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-}
-.pig {
-	display: flex;
 
-	height: 100vh;
-
-	justify-content: center;
-	align-items: center;
-}
-#hru {
-	padding: 10vw;
-
-	border: none;
-	outline: none;
-	background: url('../../img/pig.png');
-	background-repeat: no-repeat;
-	background-size: cover;
+	.hru-content {
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		.hru-blya {
+			width: 100%;
+			text-align: center;
+			button {
+				border: 1px solid transparent;
+				background: transparent url("../../img/pig.png") no-repeat center top;
+				background-size: cover;
+				width: 356px;
+				height: 356px;
+				outline: none;
+				display: inline-block;
+				margin: 0 auto;
+			}
+		}
+	}
 }
