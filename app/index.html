@@ -6,48 +6,34 @@
 
     <title>DCM services</title>
 
-    <meta name="description" content="DCM services description" />
-    <meta name="keywords" content="" />
-
-    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico" />
-    <!--<link rel="icon" type="image/png" href="images/favicon/favicon.png" />-->
-
-    <!-- Apple Touch Icon 200x200 px -->
-    <!--<link rel="apple-touch-icon" href="images/favicon/apple/custom-icon.png" />-->
-
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-config" content="browserconfig.xml" />
-
-    <link rel="canonical" href="http://dcm.kg">
-
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/page.html">
-    <meta property="og:title" content="Content Title">
-    <meta property="og:image" content="https://example.com/image.jpg">
-    <meta property="og:description" content="Description Here">
-    <meta property="og:site_name" content="Site Name">
-    <meta property="og:locale" content="en_US">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@site_account">
-    <meta name="twitter:creator" content="@individual_account">
-    <meta name="twitter:url" content="https://example.com/page.html">
-    <meta name="twitter:title" content="Content Title">
-    <meta name="twitter:description" content="Описание контента короче 200 символов">
-    <meta name="twitter:image" content="https://example.com/image.jpg">
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>'asdasdasd</h2>
-        </div>
-    </div>
-</div>
+
+<canvas id="granim-canvas"></canvas>
+
+<script src="js/granim.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Create a Granim instance -->
+<script>
+    let granimInstance = new Granim({
+        element: '#granim-canvas',
+        name: 'granim',
+        opacity: [1, 1],
+        states : {
+            "default-state": {
+                gradients: [
+                    ['#834D9B', '#D04ED6'],
+                    ['#1CD8D2', '#93EDC7']
+                ]
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
