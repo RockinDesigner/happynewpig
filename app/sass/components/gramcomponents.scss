@@ -4,10 +4,27 @@
 }
 
 .full-hru {
+	position: absolute;
 	z-index: 1;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
 	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.pig {
+	display: flex;
+
+	height: 100vh;
+
+	justify-content: center;
+	align-items: center;
+}
+#hru {
+	padding: 10vw;
+
+	border: none;
+	outline: none;
+	background: url('../../img/pig.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
