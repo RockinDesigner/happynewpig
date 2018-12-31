@@ -1,0 +1,80 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+p {
+  margin: 0; }
+
+body {
+  background-color: #1b2434;
+  line-height: 1;
+  color: #fff;
+  font-family: "lato-medium", serif;
+  font-size: 16px; }
+  body ul {
+    display: block; }
+    body ul li {
+      display: inline-block; }
+  body a {
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+    display: inline-block; }
+    body a:hover {
+      outline: none;
+      text-decoration: none; }
+    body a:active {
+      outline: none;
+      text-decoration: none; }
+    body a:focus {
+      outline: none;
+      text-decoration: none; }
+  body .limited-block {
+    position: relative;
+    overflow: hidden;
+    height: 100vh; }
+  body .bg-filter-light {
+    background-color: rgba(33, 40, 50, 0.87);
+    padding-top: 50px;
+    height: 100vh; }
+    @media only screen and (max-width: 770px) {
+      body .bg-filter-light {
+        padding-top: 60px; } }
+  body .bg-filter-dark {
+    background: rgba(28, 43, 71, 0.93);
+    height: 100vh; }
+  @media only screen and (max-width: 470px) {
+    body .limited-block {
+      overflow: scroll; }
+    body .bg-filter-light {
+      height: auto; } }
+
+/*# sourceMappingURL=maps/main.css.map */
