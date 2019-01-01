@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         if("pause" in audio) audio.pause();
 
-        audio = new Audio('soundss/pig.mp3');
+        audio = new Audio('sounds/pig.mp3');
 
         audio.play();
 
