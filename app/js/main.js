@@ -6,15 +6,29 @@ $(document).ready(function () {
 
         $(this).attr('disabled', 'disabled');
 
-        let arr = ["Яблоко", "Апельсин", "Груша", "Лимон"];
+        let arr = ["Если Вы проявите инициативу, успех не заставит себя ждать.", "Ваши надежды и планы сбудутся" +
+        " сверх всяких ожиданий.", "Готовьтесь к романтическим приключениям.", "В этом месяце ночная жизнь для вас.", "Вам пора отдохнуть.", "Вам предлагается мечта всей жизни. Скажите да!", "Вас ждет приятный сюрприз.", "Ваши надежды и планы сбудутся сверх всяких ожиданий.", "Время – ваш союзник, лучше отложить принятие важного решения хотя бы на день.", "Время и терпение,  вас ждут много сюрпризов!", "Время осушит все слезы и исцелит все раны."];
 
-        let rand = Math.floor(Math.random() * arr.length);
+        let hruTitle = $('.hru-title p');
 
-        $('.hru-title p').text(arr[rand]);
+        let currentext = hruTitle.text();
+
+        let rand = Math.floor(Math.random() * arr.length),
+            randText = $(hruTitle).text(arr[rand]);
+
+        if (currentext === randText) {
+            $(hruTitle).text(arr[rand] + Math.random());
+
+            console.log(rand);
+            console.log(currentext);
+
+        } else {
+            $(hruTitle).text(arr[rand]);
+        }
 
         setTimeout(function () {
             $('#hru').removeAttr('disabled', 'disabled');
-        }, 1000);
+        }, 500);
 
         if("pause" in audio) audio.pause();
 
