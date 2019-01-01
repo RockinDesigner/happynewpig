@@ -47,6 +47,11 @@
 				cursor: pointer;
 				display: inline-block;
 				margin: 0 auto;
+
+				&:active {
+					background-size: 350px;
+					transition: all .2s;
+				}
 			}
 		}
 	}

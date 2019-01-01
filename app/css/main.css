@@ -87,5 +87,11 @@ body {
         cursor: pointer;
         display: inline-block;
         margin: 0 auto; }
+        .full-hru .hru-content .hru-blya button:active {
+          -webkit-background-size: 350px 350px;
+                  background-size: 350px;
+          -webkit-transition: all .2s;
+          -o-transition: all .2s;
+          transition: all .2s; }
 
 /*# sourceMappingURL=maps/main.css.map */
