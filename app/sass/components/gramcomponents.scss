@@ -1,57 +1,72 @@
+body {
+	font-family: 'Pacifico', cursive;
+
+}
 #granim-canvas {
 	width: 100%;
 	height: 100vh;
 }
 
 #particles-js {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
 	width: 100%;
 	height: 100vh;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	top: 0;
 }
 
 .full-hru {
 	position: absolute;
-	height: 100vh;
 	z-index: 1;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
 
+	height: 100vh;
+
 	.hru-content {
-		height: 100vh;
 		display: flex;
+
+		height: 100vh;
+
 		align-items: center;
 		.hru-blya {
 			width: 100%;
+
 			text-align: center;
 			.hru-title {
 				min-height: 80px;
 				p {
-					font-size: 40px;
 					color: #fff;
+
+					font-size: 40px;
 				}
 			}
 
 			button {
-				border: 1px solid transparent;
-				background: transparent url("../../img/pig.png") no-repeat center top;
-				background-size: cover;
+				display: inline-block;
+
 				width: 356px;
 				height: 356px;
-				outline: none;
-				cursor: pointer;
-				display: inline-block;
 				margin: 0 auto;
 
-				&:active {
-					background-size: 350px;
-					transition: all .2s;
-				}
+				cursor: pointer;
+				transition: all ease .1s;
+
+				border: 1px solid transparent;
+				outline: none;
+				background: transparent url("../../img/pig-shadow.png") no-repeat center top;
+				background-size: contain;
+			}
+			button:focus {
+				transition: all ease .1s;
+
+				background: transparent url("../../img/pig.png") no-repeat 10% 10%;
+				background-size: contain;
 			}
 		}
 	}
