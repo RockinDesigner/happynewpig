@@ -61,12 +61,11 @@ body {
 				outline: none;
 				background: transparent url("../../img/pig-shadow.png") no-repeat center top;
 				background-size: contain;
-			}
-			button:focus {
-				transition: all ease .1s;
 
-				background: transparent url("../../img/pig.png") no-repeat 10% 10%;
-				background-size: contain;
+				&:active {
+					background: transparent url("../../img/pig.png") no-repeat center top;
+					background-size: contain;
+				}
 			}
 		}
 	}
