@@ -1,0 +1,182 @@
+//== Mixin для загрузски шрифтов, mixin используется в base/typography
+@mixin fontFace($family, $src, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: $family;
+        //src: url('#{$src}.eot'); // IE9 compat
+        //src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+            //url('#{$src}.woff') format('woff'), // standards
+            //url('#{$src}.otf') format('woff'), // standards
+        src: url('#{$src}.ttf') format('truetype'); // Safari, Android, iOS
+        //url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+        font-style: $style;
+        font-weight: $weight;
+    }
+}
+//== Mixin для генерации стилей кнопок, mixin используется в components/button,
+// переменные начинающиеся на DCM задают дефолтные стили в utils/variables,
+// Mixin позволяет сделать выбор между тремя состояниями кнопки: пустая, с заливкой, ссылка.
+// Для выбоа состояния кнопки укажите её ТИП в конце.
+// Типы состояния кнокпки:
+// $bg-style: normal
+// $bg-style: null
+// $bg-style: link
+
+// $main-button-color - основной цвет кнопки
+// $btn-border-style - оформление границы кнопки
+// $btn-border-radius - радиус кнопки
+// $btn-font-size - размер текста
+// $btn-font-color - цвет текста
+// $btn-font-family - стиль шрифта
+// $btn-padding - внутрение отступы
+
+@mixin generation-btn($main-button-color: $dcm-btn-bg-color, $btn-border-style: $dcm-btn-border-style, $btn-border-radius: $dcm-btn-border-radius, $btn-font-size: $dcm-btn-font-size, $btn-font-color: #fff, $btn-font-family: $dcm-btn-font-family, $btn-padding: $dcm-btn-padding, $bg-style: normal) {
+    @if $bg-style == normal {
+        border-radius: $btn-border-radius;
+        border: $btn-border-style $main-button-color;
+        background: $main-button-color;
+        font: {
+            family: $btn-font-family;
+            size: $btn-font-size;
+        }
+        color: $btn-font-color;
+        cursor: pointer;
+        padding: $btn-padding;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        &:hover {
+            border-color: darken($main-button-color, 8%);
+            background: darken($main-button-color, 8%);
+            cursor: pointer;
+        }
+        &:active {
+            border-color: darken($main-button-color, 10%);
+            background: darken($main-button-color, 10%);
+        }
+    } @else if $bg-style == null {
+        border-radius: $btn-border-radius;
+        border: $btn-border-style $main-button-color;
+        background: transparent;
+        font: {
+            family: $btn-font-family;
+            size: $btn-font-size;
+        }
+        color: $btn-font-color;
+        cursor: pointer;
+        padding: $btn-padding;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        &:hover {
+            border-color: darken($main-button-color, 8%);
+            background: {
+                color: $dcm-brand-color;
+            }
+            background: darken($main-button-color, 8%);
+        }
+        &:active {
+            border-color: darken($main-button-color, 8%);
+            background: {
+                color: $dcm-brand-color;
+            }
+            background: darken($main-button-color, 8%);
+        }
+    } @else if $bg-style == link {
+        border-radius: 0;
+        border: 0;
+        background: none;
+        font: {
+            family: $btn-font-family;
+            size: $btn-font-size;
+        }
+        color: $btn-font-color;
+        cursor: pointer;
+        padding: 0;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        &:hover {
+            color: $btn-font-color;
+        }
+        &:active {
+            color: $btn-font-color;
+        }
+    }
+}
+
+
+//== Mixin для генерации стилей текстовых полей, mixin используется в components/text-field
+// переменные начинающиеся на DCM задают дефолтные стили в utils/variables
+
+// $main-form-color - основной цвет эфектов кнопки в фокусе
+// $form-border-color - цвет границы текстового поля
+// $form-bg-color - задний фон текстового поля
+// $form-font-color - цвет вводимого текста
+// $form-border-radius - радиус текстового поля
+// $form-border-style - оформление границы текстового поля
+// $form-padding - внутрение отступы текстового поля
+// $form-font-size - размеры текста в текстовом поле
+// $form-font-family - стиль текста в текстовом поле
+
+@mixin generation-form($main-form-color: $dcm-form-effect-color, $form-border-color: $dcm-form-border-color, $form-bg-color: $dcm-form-bg-color, $form-font-color: $dcm-form-font-color, $form-border-radius: $dcm-form-border-radius, $form-border-style: $dcm-form-border-style, $form-padding: $dcm-form-padding, $form-font-size: $dcm-form-font-size, $form-font-family: $dcm-form-font-family) {
+    border-radius: $form-border-radius;
+    border: $form-border-style $form-border-color;
+    background-color: $form-bg-color;
+    font: {
+        family: $form-font-family;
+        size: $form-font-size;
+    }
+    color: $form-font-color;
+    outline: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: $form-padding;
+    &::-webkit-input-placeholder {
+        color: $form-font-color;
+    }
+    &::-moz-placeholder {
+        color: $form-font-color;
+    }
+    &:focus {
+        border-color: $main-form-color;
+        box-shadow: 0 0 0 1px $main-form-color;
+    }
+}
+
+
+//== Mixin для slick slider, помогает добавлять указатели для слайдера
+@mixin slick-prev($color-pointer, $posit-top-pointer, $posit-left-pointer, $font-size-pointer: auto) {
+    color: $color-pointer;
+    z-index: 1001;
+    font-size: 0;
+    cursor: pointer;
+    position: absolute;
+    left: $posit-left-pointer;
+    top: $posit-top-pointer;
+    i {
+        font-size: $font-size-pointer !important;
+    }
+}
+@mixin slick-next($color-pointer, $posit-top-pointer, $posit-right-pointer, $font-size-pointer: auto) {
+    color: $color-pointer;
+    z-index: 1001;
+    font-size: 0;
+    cursor: pointer;
+    position: absolute;
+    right: $posit-right-pointer;
+    top: $posit-top-pointer;
+    i {
+        font-size: $font-size-pointer !important;
+    }
+}
+
+
+// Mixin для добавления изображения в background блока,
+// используется для блоков в которые будут загружатся картинки из админки
+// $image-block-width - Ширина блока
+// $image-block-height - Высота блока
+// $image-bg-block-position - Позиция картинки
+// $image-bg-block-size - Размер картинки заднего фона
+
+@mixin image-block($image-block-width: auto, $image-block-height: auto, $image-bg-block-position: center, $image-bg-block-size: cover) {
+    background: {
+        size: $image-bg-block-size;
+        repeat: no-repeat !important;
+        position: $image-bg-block-position !important;
+    }
+    width: $image-block-width;
+    height: $image-block-height;
+}

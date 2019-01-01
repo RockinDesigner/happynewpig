@@ -1,0 +1,8 @@
+// файл со стилями которым пока не нашлось места
+// .limited-block - задает высоту равную экрану и отключает скрол
+// .bg-filter-page - задает цветовую маску для .home-page
+
+body {
+    overflow: hidden;
+    position: relative;
+}
