@@ -8,7 +8,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
   border: 0;
 
-  font-size: 100%;}
+  font-size: 100%;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -34,7 +35,8 @@ q:before, q:after {
 table {
   border-spacing: 0;
 
-  border-collapse: collapse;}
+  border-collapse: collapse;
+}
 
 p {
   margin: 0; }
@@ -44,7 +46,8 @@ a {
 body {
   position: relative;
 
-  overflow: hidden;}
+  overflow: hidden;
+}
 
 body {
   font-family: 'Marmelad', sans-serif;
@@ -138,16 +141,22 @@ body {
 
         border: 1px solid transparent;
         outline: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
         background: transparent url("../img/pig-shadow.png") no-repeat center top;
         -webkit-background-size: contain;
                 background-size: contain; }
         .full-hru .hru-content .hru-blya button:active {
           background: transparent url("../img/pig.png") no-repeat center top;
           -webkit-background-size: contain;
-                  background-size: contain; }
+                  background-size: contain;
+          -webkit-tap-highlight-color: rgba(0,0,0,0);
+          -webkit-tap-highlight-color: transparent;
+          outline: none;
+        }
         .full-hru .copyright{
           position: absolute;
-          bottom: 3%;
+          top: 10px;
 
           opacity: .3;
         }
